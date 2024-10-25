@@ -1,15 +1,18 @@
 // Theme handling
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 const currentTheme = localStorage.getItem('theme');
+
 if (currentTheme === 'dark') {
     document.body.classList.toggle('dark-theme');
 } else if (currentTheme === 'light') {
     document.body.classList.toggle('light-theme');
 }
+
 // PWA installation prompt
 let deferredPrompt;
 const installButton = document.createElement('button');
 installButton.style.display = 'none';
+
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();
@@ -18,6 +21,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     // Update UI to notify the user they can add to home screen
     installButton.style.display = 'block';
 });
+
 installButton.addEventListener('click', async () => {
     if (deferredPrompt) {
         // Show the prompt
@@ -32,6 +36,7 @@ installButton.addEventListener('click', async () => {
         installButton.style.display = 'none';
     }
 });
+
 // Lazy loading images
 document.addEventListener('DOMContentLoaded', () => {
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
@@ -52,9 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+
         lazyImages.forEach(img => imageObserver.observe(img));
     }
 });
+
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -68,6 +76,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
 // Add animation class to elements when they come into view
 const animateOnScroll = () => {
     const elements = document.querySelectorAll('.animate-on-scroll');
@@ -79,10 +88,14 @@ const animateOnScroll = () => {
             }
         });
     }, { threshold: 0.1 });
+
     elements.forEach(element => observer.observe(element));
 };
+
 // Initialize animations
 document.addEventListener('DOMContentLoaded', animateOnScroll);
+
+
 // Handle offline/online status
 window.addEventListener('online', function() {
     document.body.classList.remove('offline');
@@ -94,6 +107,7 @@ window.addEventListener('online', function() {
         });
     }
 });
+
 window.addEventListener('offline', function() {
     document.body.classList.add('offline');
     // Optionally show a notification that we're offline

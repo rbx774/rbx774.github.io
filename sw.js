@@ -8,6 +8,7 @@ const ASSETS_TO_CACHE = [
     '/images/icon-512x512.png',
     '/manifest.json'
 ];
+
 // Install event - cache assets
 self.addEventListener('install', event => {
     event.waitUntil(
@@ -18,6 +19,7 @@ self.addEventListener('install', event => {
             .then(() => self.skipWaiting())
     );
 });
+
 // Activate event - clean up old caches
 self.addEventListener('activate', event => {
     event.waitUntil(
@@ -32,6 +34,7 @@ self.addEventListener('activate', event => {
         })
     );
 });
+
 // Fetch event - serve from cache, fall back to network
 self.addEventListener('fetch', event => {
     event.respondWith(
