@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigating X for Quality Tech News - NR Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <article class="blog-post">
+        <header class="post-header">
+            <h1>Navigating X (formerly Twitter) for Quality Tech News</h1>
+            <div class="post-meta">
+                <time datetime="2023-12-15">December 15, 2023</time>
+                <span class="category">Tech Insights</span>
+            </div>
+        </header>
+        <div class="post-content">
+            <h2>The Challenge of Information Quality</h2>
+            <p>X (formerly Twitter) has become an invaluable resource for real-time tech news and updates. However, the platform's open nature can make it challenging to distinguish reliable information from misinformation. This guide will help you navigate X effectively to find trustworthy content in technology, renewable energy, electric vehicles, and neuroscience.</p>
+            <h2>Essential Fact-Checking Strategies</h2>
+            <ul>
+                <li>Verify the source's credentials and expertise</li>
+                <li>Cross-reference breaking news with established tech publications</li>
+                <li>Check the timestamp of posts to ensure relevance</li>
+                <li>Look for original sources and official announcements</li>
+                <li>Be wary of sensational claims without supporting evidence</li>
+            </ul>
+            <h2>Curated List of Reliable Sources</h2>
+            
+            <h3>Technology and Innovation</h3>
+            <ul>
+                <li>@MIT - Massachusetts Institute of Technology's official account</li>
+                <li>@TechCrunch - Leading technology media platform</li>
+                <li>@WIRED - In-depth technology coverage</li>
+                <li>@verge - Consumer technology news</li>
+                <li>@Stanford - Stanford University's research updates</li>
+            </ul>
+            <h3>Renewable Energy</h3>
+            <ul>
+                <li>@IRENA - International Renewable Energy Agency</li>
+                <li>@CleanTechnica - Renewable energy news and analysis</li>
+                <li>@BloombergNEF - Clean energy research</li>
+                <li>@RenewablesWorld - Global renewable energy updates</li>
+                <li>@IEA - International Energy Agency</li>
+            </ul>
+            <h3>Electric Vehicles</h3>
+            <ul>
+                <li>@InsideEVs - Comprehensive EV coverage</li>
+                <li>@ElectrekCo - Electric vehicle news</li>
+                <li>@EVNewsDaily - Daily updates on EVs</li>
+                <li>@BloombergNEF - Market analysis for EVs</li>
+                <li>@cleantechnica - Clean transportation news</li>
+            </ul>
+            <h3>Neuroscience</h3>
+            <ul>
+                <li>@NeuroscienceNew - Latest research findings</li>
+                <li>@SfNtweets - Society for Neuroscience</li>
+                <li>@BrainFacts_org - Brain research and education</li>
+                <li>@NeurologyToday - Clinical neurology updates</li>
+                <li>@Nature_Brain - Nature's neuroscience research</li>
+            </ul>
+            <h2>Best Practices for Engagement</h2>
+            <ol>
+                <li><strong>Create Curated Lists:</strong> Organize accounts into themed lists for focused reading</li>
+                <li><strong>Enable Verification:</strong> Prioritize verified accounts for critical information</li>
+                <li><strong>Check Profiles:</strong> Review account history and expertise before trusting information</li>
+                <li><strong>Engage Thoughtfully:</strong> Contribute to discussions with verified information only</li>
+                <li><strong>Follow Diverse Perspectives:</strong> Include different viewpoints while maintaining quality standards</li>
+            </ol>
+            <h2>Red Flags to Watch For</h2>
+            <ul>
+                <li>Accounts with no verifiable credentials</li>
+                <li>Posts with extreme or sensational claims</li>
+                <li>Content that lacks citations or sources</li>
+                <li>Automated or bot-like posting patterns</li>
+                <li>Accounts spreading known conspiracy theories</li>
+            </ul>
+            <h2>Conclusion</h2>
+            <p>While X can be overwhelming, it remains an excellent resource for tech news when approached thoughtfully. By following verified experts, cross-referencing information, and maintaining a critical mindset, you can build a reliable news feed that keeps you informed about the latest developments in technology, renewable energy, electric vehicles, and neuroscience.</p>
+        </div>
+    </article>
+</body>
+</html>
