@@ -1,6 +1,7 @@
 :root {
     /* Existing variables */
     --overlay-bg: rgba(10, 25, 47, 0.95);  /* Semi-transparent overlay */
+
     --primary-bg: #0A192F;      /* Deep blue background */
     --secondary-bg: #112240;    /* Lighter blue for sections */
     --text-primary: #E6F1FF;    /* Bright white-blue for main text */
