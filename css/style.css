@@ -1,4 +1,7 @@
 :root {
+    /* Existing variables */
+    --overlay-bg: rgba(10, 25, 47, 0.95);  /* Semi-transparent overlay */
+
     --primary-bg: #0A192F;      /* Deep blue background */
     --secondary-bg: #112240;    /* Lighter blue for sections */
     --text-primary: #E6F1FF;    /* Bright white-blue for main text */
@@ -13,14 +16,12 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--primary-bg);
     color: var(--text-primary);
     line-height: 1.6;
 }
-
 
 header {
     position: fixed;
@@ -123,6 +124,51 @@ footer {
     color: var(--text-secondary);
 }
 
+.footer-main {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--text-secondary);
+}
+
+.footer-legal {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.footer-legal h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.footer-legal h4 {
+    color: var(--accent);
+    margin: 1.5rem 0 1rem;
+    font-size: 1.1rem;
+}
+
+.legal-section {
+    margin-bottom: 2rem;
+}
+
+.legal-section p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .footer-legal {
+        padding: 1rem 0;
+    }
+    
+    .legal-section p {
+        font-size: 0.85rem;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
@@ -151,6 +197,64 @@ footer {
 
     .featured-article {
         padding: 1.5rem;
+    }
+}
+
+/* Cookie Notice */
+.cookie-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--overlay-bg);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid var(--accent);
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cookie-notice.visible {
+    transform: translateY(0);
+}
+
+.cookie-notice p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.cookie-notice button {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.cookie-notice button:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .cookie-notice {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .cookie-notice button {
+        width: 100%;
+        padding: 0.75rem;
     }
 }
 

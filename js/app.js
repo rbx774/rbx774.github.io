@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -94,7 +93,6 @@ const animateOnScroll = () => {
 
 // Initialize animations
 document.addEventListener('DOMContentLoaded', animateOnScroll);
-
 
 // Handle offline/online status
 window.addEventListener('online', function() {
