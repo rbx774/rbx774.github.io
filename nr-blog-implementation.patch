@@ -1,0 +1,431 @@
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..f5b0d1e
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,43 @@
++# NR Blog
++
++## Project Description
++This repository hosts a Progressive Web App (PWA) blog focused on cutting-edge technologies, renewable energies, Battery Electric Vehicles (BEV), and neuroscience. The implementation uses pure HTML, JavaScript, and CSS to ensure simplicity and performance.
++
++### Key Features
++- Progressive Web App (PWA) capabilities for offline access and mobile-first experience
++- Clean, modern interface optimized for readability
++- Responsive design that works across all devices
++- GitHub Pages hosting for reliable content delivery
++- Focus on fact-checked, high-quality content
++
++### Main Topics
++- New Technologies and Innovation
++- Renewable Energy Solutions
++- Battery Electric Vehicles (BEV)
++- Neuroscience Developments
++- Tech Industry Analysis
++
++### Technical Implementation
++- HTML5 for semantic structure
++- Vanilla JavaScript for functionality
++- CSS3 for styling and animations
++- PWA features including:
++  - Service Workers for offline capability
++  - Web App Manifest
++  - Installable on mobile devices
++  - Custom icons and splash screens
++
++### First Article
++The inaugural post will cover "Navigating X (formerly Twitter) for Quality Tech News" including:
++- Strategies for fact-checking information
++- Identifying reliable sources
++- Avoiding misinformation
++- Curated list of trusted accounts in our focus areas
++
++### Development Status
++- Initial setup and PWA configuration [In Progress]
++- First article development [Planned]
++- Theme and styling decisions [Pending]
++
++### Contributing
++Contributions and suggestions are welcome. Please read our contributing guidelines (coming soon) before submitting pull requests.
++
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..b9a8172
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,89 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <meta name="description" content="Tech, Renewable Energy, BEV, and Neuroscience Blog">
++    <meta name="theme-color" content="#0A192F">
++    <title>NR Blog - Tech & Science Insights</title>
++    <link rel="stylesheet" href="css/style.css">
++    <link rel="manifest" href="manifest.json">
++    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
++    <link rel="apple-touch-icon" href="images/icon-192x192.png">
++</head>
++<body>
++    <header>
++        <nav>
++            <div class="logo">NR Blog</div>
++            <ul>
++                <li><a href="#home">Home</a></li>
++                <li><a href="#articles">Articles</a></li>
++                <li><a href="#about">About</a></li>
++            </ul>
++        </nav>
++    </header>
++
++    <main>
++        <section id="featured">
++            <article class="featured-article">
++                <h1>Navigating X (formerly Twitter) for Quality Tech News</h1>
++                <div class="article-meta">
++                    <span class="date">Published: December 2023</span>
++                    <span class="category">Tech Insights</span>
++                </div>
++                <div class="article-content">
++                    <h2>Introduction</h2>
++                    <p>In today's fast-paced digital world, X (formerly Twitter) has become a primary source of real-time news and updates. However, navigating through the noise to find reliable information requires strategy and careful consideration.</p>
++
++                    <h2>The Challenge of Misinformation</h2>
++                    <p>While X provides instant access to breaking news and discussions, it's also prone to the rapid spread of misinformation. Understanding how to verify information and identify reliable sources is crucial.</p>
++                </div>
++            </article>
++        </section>
++    </main>
++
++    <footer>
++        <p>&copy; 2023 NR Blog. All rights reserved.</p>
++    </footer>
++
++    <script src="js/app.js"></script>
++    <script>
++        if ('serviceWorker' in navigator) {
++            navigator.serviceWorker.register('/sw.js')
++                .then(registration => console.log('ServiceWorker registration successful'))
++                .catch(err => console.log('ServiceWorker registration failed: ', err));
++        }
++    </script>
++</body>
++</html>
++
+diff --git a/css/style.css b/css/style.css
+new file mode 100644
+index 0000000..892a71c
+--- /dev/null
++++ b/css/style.css
+@@ -0,0 +1,165 @@
++:root {
++    --primary-bg: #0A192F;      /* Deep blue background */
++    --secondary-bg: #112240;    /* Lighter blue for sections */
++    --text-primary: #E6F1FF;    /* Bright white-blue for main text */
++    --text-secondary: #8892B0;  /* Muted blue for secondary text */
++    --accent: #64FFDA;          /* Teal accent color */
++    --nav-height: 4rem;
++}
++
++* {
++    margin: 0;
++    padding: 0;
++    box-sizing: border-box;
++}
++
++body {
++    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
++    background-color: var(--primary-bg);
++    color: var(--text-primary);
++    line-height: 1.6;
++}
++
++header {
++    position: fixed;
++    top: 0;
++    width: 100%;
++    background-color: var(--primary-bg);
++    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
++    z-index: 1000;
++}
++
++nav {
++    max-width: 1200px;
++    margin: 0 auto;
++    height: var(--nav-height);
++    display: flex;
++    justify-content: space-between;
++    align-items: center;
++    padding: 0 2rem;
++}
++
++.logo {
++    font-size: 1.5rem;
++    font-weight: bold;
++    color: var(--accent);
++}
++
++nav ul {
++    display: flex;
++    list-style: none;
++    gap: 2rem;
++}
++
++nav a {
++    color: var(--text-primary);
++    text-decoration: none;
++    font-size: 1rem;
++    transition: color 0.3s ease;
++}
++
++nav a:hover {
++    color: var(--accent);
++}
++
++main {
++    max-width: 1200px;
++    margin: calc(var(--nav-height) + 2rem) auto 2rem;
++    padding: 0 2rem;
++}
++
++.featured-article {
++    background-color: var(--secondary-bg);
++    border-radius: 8px;
++    padding: 2rem;
++    margin-bottom: 2rem;
++}
++
++h1 {
++    font-size: 2.5rem;
++    margin-bottom: 1rem;
++    color: var(--accent);
++}
++
++h2 {
++    font-size: 1.8rem;
++    margin: 2rem 0 1rem;
++    color: var(--text-primary);
++}
++
++h3 {
++    font-size: 1.4rem;
++    margin: 1.5rem 0 0.5rem;
++    color: var(--accent);
++}
++
++.article-meta {
++    color: var(--text-secondary);
++    margin-bottom: 2rem;
++    display: flex;
++    gap: 1rem;
++}
++
++.article-content p {
++    margin-bottom: 1.5rem;
++    color: var(--text-secondary);
++}
++
++.article-content ul {
++    margin: 1rem 0 1.5rem 2rem;
++    color: var(--text-secondary);
++}
++
++.article-content li {
++    margin-bottom: 0.5rem;
++}
++
++footer {
++    text-align: center;
++    padding: 2rem;
++    background-color: var(--secondary-bg);
++    color: var(--text-secondary);
++}
++
++/* Responsive Design */
++@media (max-width: 768px) {
++    nav {
++        padding: 0 1rem;
++    }
++
++    nav ul {
++        gap: 1rem;
++    }
++
++    main {
++        padding: 0 1rem;
++    }
++
++    h1 {
++        font-size: 2rem;
++    }
++
++    h2 {
++        font-size: 1.5rem;
++    }
++
++    h3 {
++        font-size: 1.2rem;
++    }
++
++    .featured-article {
++        padding: 1.5rem;
++    }
++}
++
++/* Animations */
++@keyframes fadeIn {
++    from { opacity: 0; transform: translateY(20px); }
++    to { opacity: 1; transform: translateY(0); }
++}
++
++.featured-article {
++    animation: fadeIn 0.8s ease-out;
++}
++
+diff --git a/manifest.json b/manifest.json
+new file mode 100644
+index 0000000..5c2c4c4
+--- /dev/null
++++ b/manifest.json
+@@ -0,0 +1,35 @@
++{
++    "name": "NR Blog - Tech & Science Insights",
++    "short_name": "NR Blog",
++    "description": "Latest insights on technology, renewable energy, EVs, and neuroscience",
++    "start_url": "/",
++    "display": "standalone",
++    "background_color": "#0A192F",
++    "theme_color": "#0A192F",
++    "orientation": "any",
++    "icons": [
++        {
++            "src": "images/icon-192x192.png",
++            "sizes": "192x192",
++            "type": "image/png",
++            "purpose": "any maskable"
++        },
++        {
++            "src": "images/icon-512x512.png",
++            "sizes": "512x512",
++            "type": "image/png",
++            "purpose": "any maskable"
++        }
++    ],
++    "categories": ["technology", "science", "blog"],
++    "shortcuts": [
++        {
++            "name": "Latest Articles",
++            "url": "/articles",
++            "description": "View the latest blog posts"
++        },
++        {
++            "name": "X Navigation Guide",
++            "url": "/articles/navigating-x-for-tech-news.html",
++            "description": "Learn how to find quality tech news on X"
++        }
++    ]
++}
++
+diff --git a/sw.js b/sw.js
+new file mode 100644
+index 0000000..892a71c
+--- /dev/null
++++ b/sw.js
+@@ -0,0 +1,89 @@
++const CACHE_NAME = 'nr-blog-cache-v1';
++const ASSETS_TO_CACHE = [
++    '/',
++    '/index.html',
++    '/css/style.css',
++    '/js/app.js',
++    '/articles/navigating-x-for-tech-news.html',
++    '/images/icon-192x192.png',
++    '/images/icon-512x512.png',
++    '/manifest.json'
++];
++
++// Install event - cache assets
++self.addEventListener('install', event => {
++    event.waitUntil(
++        caches.open(CACHE_NAME)
++            .then(cache => {
++                return cache.addAll(ASSETS_TO_CACHE);
++            })
++            .then(() => self.skipWaiting())
++    );
++});
++
++// Activate event - clean up old caches
++self.addEventListener('activate', event => {
++    event.waitUntil(
++        caches.keys().then(cacheNames => {
++            return Promise.all(
++                cacheNames.map(cacheName => {
++                    if (cacheName !== CACHE_NAME) {
++                        return caches.delete(cacheName);
++                    }
++                })
++            );
++        }).then(() => self.clients.claim())
++    );
++});
++
++// Fetch event - serve from cache, fall back to network
++self.addEventListener('fetch', event => {
++    event.respondWith(
++        caches.match(event.request)
++            .then(response => {
++                if (response) {
++                    return response;
++                }
++                return fetch(event.request)
++                    .then(response => {
++                        if (!response || response.status !== 200 || response.type !== 'basic') {
++                            return response;
++                        }
++                        const responseToCache = response.clone();
++                        caches.open(CACHE_NAME)
++                            .then(cache => {
++                                cache.put(event.request, responseToCache);
++                            });
++                        return response;
++                    });
++            })
++    );
++});
++
+diff --git a/js/app.js b/js/app.js
+new file mode 100644
+index 0000000..892a71c
+--- /dev/null
++++ b/js/app.js
+@@ -0,0 +1,89 @@
++// Theme handling
++const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
++let currentTheme = localStorage.getItem('theme') || 'dark';
++
++function applyTheme(theme) {
++    document.body.classList.remove('light-theme', 'dark-theme');
++    document.body.classList.add(`${theme}-theme`);
++    localStorage.setItem('theme', theme);
++}
++
++// Initialize theme
++applyTheme(currentTheme);
++
++// PWA installation prompt
++let deferredPrompt;
++
++window.addEventListener('beforeinstallprompt', (e) => {
++    e.preventDefault();
++    deferredPrompt = e;
++    showInstallPromotion();
++});
++
++// Register service worker
++if ('serviceWorker' in navigator) {
++    window.addEventListener('load', () => {
++        navigator.serviceWorker.register('/sw.js')
++            .then(registration => {
++                

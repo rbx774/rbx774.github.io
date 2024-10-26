@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tech, Renewable Energy, BEV, and Neuroscience Blog">
+    <meta name="theme-color" content="#0A192F">
+    <title>NR Blog - Tech & Science Insights</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+</head>
+<body>
+    <div id="cookie-notice" class="cookie-notice">
+        <p>Ce site utilise des cookies essentiels pour le fonctionnement de l'application web progressive (PWA). En continuant à utiliser ce site, vous acceptez leur utilisation.</p>
+        <button id="accept-cookies">J'accepte</button>
+    </div>
+    <header>
+        <nav>
+            <div class="logo">NR Blog</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#mentions-legales">Mentions Légales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="featured">
+            <article class="featured-article">
+                <h1>Navigating X (formerly Twitter) for Quality Tech News</h1>
+                <div class="article-meta">
+                    <span class="date">Published: December 2023</span>
+                    <span class="category">Tech Insights</span>
+                </div>
+                <div class="article-content">
+                    <h2>Introduction</h2>
+                    <p>In today's fast-paced digital world, X (formerly Twitter) has become a primary source of real-time news and updates. However, navigating through the noise to find reliable information requires strategy and careful consideration.</p>
+
+                    <h2>The Challenge of Misinformation</h2>
+                    <p>While X provides instant access to breaking news and discussions, it's also prone to the rapid spread of misinformation. Understanding how to verify information and identify reliable sources is crucial.</p>
+
+                    <h2>Best Practices for Fact-Checking</h2>
+                    <ul>
+                        <li>Cross-reference information with established news sources</li>
+                        <li>Check the credibility and expertise of the account sharing information</li>
+                        <li>Look for verified sources and official accounts</li>
+                        <li>Be wary of sensational headlines and emotional manipulation</li>
+                    </ul>
+
+                    <h2>Recommended Accounts to Follow</h2>
+                    <h3>Technology & Innovation</h3>
+                    <ul>
+                        <li>@MIT - Massachusetts Institute of Technology</li>
+                        <li>@TechCrunch - Tech news and analysis</li>
+                        <li>@WIRED - Innovation and technology insights</li>
+                    </ul>
+
+                    <h3>Renewable Energy</h3>
+                    <ul>
+                        <li>@IRENA - International Renewable Energy Agency</li>
+                        <li>@CleanTechnica - Clean technology news</li>
+                        <li>@BloombergNEF - New Energy Finance research</li>
+                    </ul>
+
+                    <h3>Electric Vehicles</h3>
+                    <ul>
+                        <li>@InsideEVs - Electric vehicle news and reviews</li>
+                        <li>@ElectrekCo - Electric transportation news</li>
+                        <li>@EVNewsDaily - Daily EV updates</li>
+                    </ul>
+
+                    <h3>Neuroscience</h3>
+                    <ul>
+                        <li>@NeuroscienceNew - Latest neuroscience research</li>
+                        <li>@SfNtweets - Society for Neuroscience</li>
+                        <li>@BrainFacts_org - Brain research and education</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-main">
+            <p>&copy; 2023 NR Blog. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-legal">
+            <h3 id="mentions-legales">Mentions Légales</h3>
+            <div class="legal-section">
+                <h4>Éditeur du site</h4>
+                <p>Norbert Roettger</p>
+                <p>Adresse: 34 Rue du Presbytère</p>
+                <p>84190 Beaumes-de-Venise</p>
+                <p>France</p>
+                <p>Email: norbert.roettger+blog@gmail.com</p>
+                <p>Directeur de la publication: Norbert Roettger</p>
+            </div>
+            
+            <div class="legal-section">
+                <h4>Hébergement</h4>
+                <p>GitHub Pages</p>
+                <p>GitHub, Inc.</p>
+                <p>88 Colin P Kelly Jr St, San Francisco, CA 94107, United States</p>
+            </div>
+            
+            <div class="legal-section">
+                <h4>Protection des données</h4>
+                <p>Ce site utilise des cookies essentiels pour son fonctionnement en tant que PWA. Les données personnelles ne sont pas collectées sauf si explicitement fournies via le formulaire de contact.</p>
+                <p>Conformément au RGPD (GDPR), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
+                <p>Pour exercer ces droits ou pour toute question, veuillez nous contacter par email.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => console.log('ServiceWorker registration successful'))
+                .catch(err => console.log('ServiceWorker registration failed: ', err));
+        }
+    </script>
+</body>
+</html>
