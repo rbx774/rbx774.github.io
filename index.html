@@ -21,10 +21,8 @@
         <nav>
             <div class="logo">NR Blog</div>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#mentions-legales">Mentions Légales</a></li>
+                <li><a href="#" id="home-link">Home</a></li>
+                <li><a href="#" id="about-link">About</a></li>
 
             </ul>
         </nav>
@@ -86,36 +84,54 @@
         </section>
     </main>
 
+    <section id="about" class="about-content" style="display: none;">
+        <h2>About NR Blog</h2>
+        <div class="about-section">
+            <h3>Our Mission</h3>
+            <p>NR Blog is dedicated to providing insightful coverage of cutting-edge developments in technology, renewable energy, electric vehicles, and neuroscience. Our goal is to make complex topics accessible while maintaining technical accuracy.</p>
+
+            <h3>Our Focus Areas</h3>
+            <ul>
+                <li><strong>Technology</strong> - Latest developments in software, hardware, and digital innovation</li>
+                <li><strong>Renewable Energy</strong> - Advances in sustainable energy solutions and grid technology</li>
+                <li><strong>Electric Vehicles</strong> - EV technology, market developments, and infrastructure</li>
+                <li><strong>Neuroscience</strong> - Brain research, cognitive science, and neural technology</li>
+            </ul>
+
+            <h3>Our Approach</h3>
+            <p>We believe in fact-based reporting and thorough analysis. Each article is carefully researched and cross-referenced with reliable sources to ensure accuracy and relevance.</p>
+
+            <h3>Stay Connected</h3>
+            <p>This blog is regularly updated with new insights and analysis. Visit frequently or enable notifications to stay informed about the latest developments in these exciting fields.</p>
+        </div>
+    </section>
+
+    <section id="impressum" class="impressum-content" style="display: none;">
+        <h2>Mentions Légales</h2>
+        <div class="legal-section">
+            <h3>Éditeur du site</h3>
+            <p>Norbert Roettger</p>
+            <p>Adresse: 34 Rue du Presbytère</p>
+            <p>84190 Beaumes-de-Venise</p>
+            <p>France</p>
+            <p>Email: norbert.roettger+blog@gmail.com</p>
+            <p>Directeur de la publication: Norbert Roettger</p>
+
+            <h3>Hébergement</h3>
+            <p>GitHub Pages</p>
+            <p>88 Colin P Kelly Jr St, San Francisco, CA 94107, United States</p>
+
+            <h3>Protection des données</h3>
+            <p>Ce site utilise des cookies essentiels pour son fonctionnement en tant que PWA. Les données personnelles ne sont pas collectées sauf si explicitement fournies via le formulaire de contact.</p>
+            <p>Conformément au RGPD (GDPR), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
+            <p>Pour exercer ces droits ou pour toute question, veuillez nous contacter par email.</p>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-main">
-            <p>&copy; 2023 NR Blog. All rights reserved.</p>
-        </div>
-        
-        <div class="footer-legal">
-            <h3 id="mentions-legales">Mentions Légales</h3>
-            <div class="legal-section">
-                <h4>Éditeur du site</h4>
-                <p>Norbert Roettger</p>
-                <p>Adresse: 34 Rue du Presbytère</p>
-                <p>84190 Beaumes-de-Venise</p>
-                <p>France</p>
-                <p>Email: norbert.roettger+blog@gmail.com</p>
-                <p>Directeur de la publication: Norbert Roettger</p>
-            </div>
-            
-            <div class="legal-section">
-                <h4>Hébergement</h4>
-                <p>GitHub Pages</p>
-                <p>GitHub, Inc.</p>
-                <p>88 Colin P Kelly Jr St, San Francisco, CA 94107, United States</p>
-            </div>
-            
-            <div class="legal-section">
-                <h4>Protection des données</h4>
-                <p>Ce site utilise des cookies essentiels pour son fonctionnement en tant que PWA. Les données personnelles ne sont pas collectées sauf si explicitement fournies via le formulaire de contact.</p>
-                <p>Conformément au RGPD (GDPR), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
-                <p>Pour exercer ces droits ou pour toute question, veuillez nous contacter par email.</p>
-            </div>
+            <p>&copy; 2024 NR Blog. All rights reserved.</p>
+            <p><a href="#impressum" id="impressum-link">Impressum</a></p>
         </div>
     </footer>
 
@@ -127,6 +143,40 @@
                 .then(registration => console.log('ServiceWorker registration successful'))
                 .catch(err => console.log('ServiceWorker registration failed: ', err));
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const impressumSection = document.getElementById('impressum');
+            const impressumLink = document.getElementById('impressum-link');
+            const homeLink = document.getElementById('home-link');
+            const featuredSection = document.getElementById('featured');
+
+            // Handle Impressum visibility
+            impressumLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                impressumSection.style.display = 'block';
+                featuredSection.style.display = 'none';
+            });
+
+            const aboutSection = document.getElementById('about');
+            const aboutLink = document.getElementById('about-link');
+
+            // Handle Home button click
+            homeLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                impressumSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                featuredSection.style.display = 'block';
+            });
+
+            // Handle About link click
+            aboutLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                impressumSection.style.display = 'none';
+                featuredSection.style.display = 'none';
+                aboutSection.style.display = 'block';
+            });
+        });
     </script>
 </body>
 </html>
