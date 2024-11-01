@@ -299,3 +299,39 @@ footer {
 .footer-main a:hover {
     color: var(--accent);
 }
+
+.about-content {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.about-content h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.about-content h3 {
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-section {
+    margin-bottom: 2rem;
+}
+
+.about-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-section li {
+    margin-bottom: 1rem;
+}
+
+.about-section strong {
+    color: var(--accent);
+}
