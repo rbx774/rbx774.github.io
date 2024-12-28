@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    const path = window.location.pathname.replace(/^\//, '');
+    if (path === '.well-known/appspecific/com.tesla.3p.public-key.pem') {
+      // Redirect to the actual file location or use fetch to get content
+      window.location.href = '/.well-known/appspecific/com.tesla.3p.public-key.pem';
+    }
+  </script>
+</head>
+<body>
+  <p>File not found</p>
+</body>
+</html>
