@@ -5,7 +5,7 @@
     const path = window.location.pathname.replace(/^\//, '');
     if (path === '.well-known/appspecific/com.tesla.3p.public-key.pem') {
       // Instead of redirecting, alert or display information
-      alert('The public key should be accessible at this location. Please ensure it exists in the repository.');
+      // alert('The public key should be accessible at this location. Please ensure it exists in the repository.');
       // Or you could fetch the file content if you're sure it's there:
       fetch('/appspecific/com.tesla.3p.public-key.pem')
         .then(response => response.text())
