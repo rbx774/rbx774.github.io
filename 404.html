@@ -7,7 +7,7 @@
       // Instead of redirecting, alert or display information
       // alert('The public key should be accessible at this location. Please ensure it exists in the repository.');
       // Or you could fetch the file content if you're sure it's there:
-      fetch('./com.tesla.3p.public-key.pem')
+      fetch('appspecific/com.tesla.3p.public-key.pem')
         .then(response => response.text())
         .then(content => {
           document.body.innerHTML = '<pre>' + content + '</pre>';
